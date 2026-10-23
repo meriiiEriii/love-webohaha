@@ -29,6 +29,15 @@ const DATA = {
     "ready ka na? may quiz later. charot. (may quiz later talaga.)",
   ],
 
+  origin: {
+    title: "Where it all started",
+    subtitle: "every Babam thing traces back to one question, bam.",
+    tag: "my first move",
+    quote: "Nakakuha nakag COR?",
+    delivered: "delivered. best send of my life.",
+    note: "One COR question. That was the whole move. Everything after, the moonlight, the yes, the games in Pangasinan, is a direct chain of small decisions. If she ever says the question was boring, remind her she replied. charot. (Thank you for replying then, thank you for replying now.)",
+  },
+
   moonlight: {
     chip: "Oct 2024",
     title: "One night. One kiss. Under the moonlight.",
@@ -89,11 +98,10 @@ const DATA = {
 
   chatMeta: {
     title: "messages I saved for us",
-    subtitle: "it all started with one COR question. what follows is the 2am collection, unedited. you know how it is, bam.",
+    subtitle: "mostly 2am stuff. unedited. you know how it is, bam.",
   },
 
   chat: [
-    { from: "bam", text: "Nakakuha nakag COR?", tag: "my first move" },
     { from: "bam", text: "hey bam. still up?" },
     { from: "bibi", text: "yes?? why are YOU up" },
     { from: "bam", text: "can't sleep. kept thinking about how you looked on the livestream today. even through one blurry Facebook stream, unfair, honestly" },

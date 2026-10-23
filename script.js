@@ -57,6 +57,13 @@
     fillText("whisperSlot2", DATA.whisper[2]);
     fillText("whisperSlot3", DATA.whisper[3]);
 
+    fillText("originTitle", DATA.origin.title);
+    fillText("originSub", DATA.origin.subtitle);
+    fillText("originTag", DATA.origin.tag);
+    fillText("originQuote", DATA.origin.quote);
+    fillText("originDelivered", DATA.origin.delivered);
+    fillText("originNote", DATA.origin.note);
+
     fillText("moonChip", DATA.moonlight.chip);
     fillText("moonTitle", DATA.moonlight.title);
     fillText("moonBody", DATA.moonlight.body);
