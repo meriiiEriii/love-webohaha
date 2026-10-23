@@ -25,23 +25,6 @@
     return wrap;
   };
 
-  const scatter = (host, count, variants) => {
-    if (!host) return;
-    const frag = document.createDocumentFragment();
-    for (let i = 0; i < count; i++) {
-      const dot = el("span");
-      const v = variants();
-      dot.style.left = `${v.x}%`;
-      dot.style.top = v.y !== undefined ? `${v.y}%` : `${rand(0, 100)}%`;
-      dot.style.width = `${v.size}px`;
-      dot.style.height = `${v.size}px`;
-      dot.style.setProperty("--tw", `${rand(2, 4.2)}s`);
-      dot.style.animationDelay = `${rand(0, 3)}s`;
-      frag.appendChild(dot);
-    }
-    host.appendChild(frag);
-  };
-
   const applyStaticData = () => {
     fillText("giftKicker", DATA.gift.kicker);
     fillText("giftHint", DATA.gift.hint);
@@ -52,7 +35,7 @@
     fillText("heroSub", DATA.hero.subtitle);
     fillText("heroSince", DATA.hero.since);
     fillText("heroCtaText", DATA.hero.cta);
-    const chipIcons = ["i-trophy", "i-heart", "i-moon"];
+    const chipIcons = ["i-heart", "i-sparkle", "i-moon"];
     const chips = $("heroChips");
     DATA.hero.chips.forEach((text, i) => {
       const li = el("li");
@@ -68,6 +51,11 @@
     document.querySelectorAll(".counter-label").forEach((label) => {
       label.textContent = DATA.counter.units[Number(label.dataset.label)] || "";
     });
+
+    fillText("whisperSlot0", DATA.whisper[0]);
+    fillText("whisperSlot1", DATA.whisper[1]);
+    fillText("whisperSlot2", DATA.whisper[2]);
+    fillText("whisperSlot3", DATA.whisper[3]);
 
     fillText("moonChip", DATA.moonlight.chip);
     fillText("moonTitle", DATA.moonlight.title);
@@ -97,7 +85,9 @@
     const grid = $("galleryGrid");
     DATA.gallery.items.forEach((item, i) => {
       const li = el("li", "polaroid reveal");
-      li.style.setProperty("--d", `${i * 70}ms`);
+      li.style.setProperty("--d", `${i * 80}ms`);
+      li.style.setProperty("--tilt", `${item.tilt}deg`);
+      li.style.setProperty("--lift", `${item.lift}px`);
       const frame = el("div", "polaroid-img");
       if (item.src) {
         const img = el("img");
@@ -116,8 +106,28 @@
       grid.appendChild(li);
     });
 
-    $("letterBody").textContent = DATA.letter.body;
+    const flow = $("letterFlow");
+    DATA.letter.paragraphs.forEach((para, i) => {
+      const p = el("p", "letter-para reveal");
+      p.style.setProperty("--d", `${i * 150}ms`);
+      p.textContent = para;
+      flow.appendChild(p);
+    });
+    const ps = el("p", "letter-ps reveal");
+    ps.style.setProperty("--d", `${DATA.letter.paragraphs.length * 150 + 200}ms`);
+    ps.textContent = DATA.letter.ps;
+    flow.appendChild(ps);
     fillText("letterSign", DATA.letter.signature);
+
+    fillText("chatTitle", DATA.chatMeta.title);
+    fillText("chatSub", DATA.chatMeta.subtitle);
+    const thread = $("chatThread");
+    DATA.chat.forEach((msg, i) => {
+      const li = el("li", `bubble ${msg.from} reveal`);
+      li.style.setProperty("--d", `${i * 70}ms`);
+      li.textContent = msg.text;
+      thread.appendChild(li);
+    });
 
     fillText("reasonTitle", DATA.reasons.title);
     fillText("reasonSub", DATA.reasons.subtitle);
@@ -149,10 +159,9 @@
 
     fillText("qTitle", DATA.quiz.title);
     fillText("qSub", DATA.quiz.subtitle);
-    fillText("footerLine", DATA.footer.line);
     fillText("footerBy", DATA.footer.madeBy);
     fillText("againText", DATA.footer.againHint);
-    fillText("quizReplayText", DATA.quiz.replay);
+    fillText("footerLine", DATA.footer.lines[0]);
   };
 
   const canvas = $("fx");
@@ -206,7 +215,7 @@
 
   const burst = (x, y, count = 90) => {
     if (RM) return;
-    const colors = ["#7EC8E3", "#54A8DC", "#A6DBF7", "#FFFFFF", "#F6C453", "#FFE3A3"];
+    const colors = ["#7FB5DA", "#4E7FA8", "#CFE6F6", "#FFFFFF", "#EBD5A7", "#F7ECD7"];
     for (let i = 0; i < count; i++) {
       particles.push({
         x,
@@ -262,49 +271,9 @@
           }
         });
       },
-      { threshold: 0.18, rootMargin: "0px 0px -8% 0px" }
+      { threshold: 0.16, rootMargin: "0px 0px -6% 0px" }
     );
     document.querySelectorAll(".reveal").forEach((node) => io.observe(node));
-
-    const letter = document.querySelector(".letter");
-    const letterBody = $("letterBody");
-    const sign = $("letterSign");
-    let typed = false;
-    const typeLetter = () => {
-      if (typed) return;
-      typed = true;
-      const text = DATA.letter.body;
-      if (RM) {
-        letterBody.textContent = text;
-        sign.classList.add("show");
-        return;
-      }
-      const perTick = Math.max(2, Math.ceil(text.length / 650));
-      let shown = 0;
-      letterBody.classList.add("typing");
-      letterBody.textContent = "";
-      const timer = setInterval(() => {
-        shown = Math.min(text.length, shown + perTick);
-        letterBody.textContent = text.slice(0, shown);
-        if (shown >= text.length) {
-          clearInterval(timer);
-          letterBody.classList.remove("typing");
-          sign.classList.add("show");
-        }
-      }, 26);
-    };
-    const letterIo = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            typeLetter();
-            letterIo.disconnect();
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-    letterIo.observe(letter);
   };
 
   const flipped = new Set();
@@ -395,9 +364,59 @@
     }
   };
 
+  const footerRotator = () => {
+    if (DATA.footer.lines.length < 2 || RM) return;
+    const line = $("footerLine");
+    let idx = 0;
+    setInterval(() => {
+      line.classList.add("fading");
+      setTimeout(() => {
+        idx = (idx + 1) % DATA.footer.lines.length;
+        line.textContent = DATA.footer.lines[idx];
+        line.classList.remove("fading");
+      }, 430);
+    }, 7000);
+  };
+
   const showGift = () => {
-    scatter($("giftStars"), 42, () => ({ x: rand(0, 100), size: rand(1, 2.6) }));
-    scatter($("starfield"), 60, () => ({ x: rand(0, 100), y: rand(0, 70), size: rand(1, 2.4) }));
+    const host = $("giftStars");
+    const frag = document.createDocumentFragment();
+    for (let i = 0; i < 42; i++) {
+      const dot = el("span");
+      dot.style.left = `${rand(0, 100)}%`;
+      dot.style.top = `${rand(0, 100)}%`;
+      dot.style.width = `${rand(1, 2.6)}px`;
+      dot.style.height = dot.style.width;
+      dot.style.setProperty("--tw", `${rand(2, 4.2)}s`);
+      dot.style.animationDelay = `${rand(0, 3)}s`;
+      frag.appendChild(dot);
+    }
+    host.appendChild(frag);
+    const field = $("starfield");
+    const frag2 = document.createDocumentFragment();
+    for (let i = 0; i < 60; i++) {
+      const dot = el("span");
+      dot.style.left = `${rand(0, 100)}%`;
+      dot.style.top = `${rand(0, 72)}%`;
+      dot.style.width = `${rand(1, 2.4)}px`;
+      dot.style.height = dot.style.width;
+      dot.style.setProperty("--tw", `${rand(2, 4.2)}s`);
+      dot.style.animationDelay = `${rand(0, 3)}s`;
+      frag2.appendChild(dot);
+    }
+    field.appendChild(frag2);
+    const hearts = $("floatHearts");
+    const frag3 = document.createDocumentFragment();
+    for (let i = 0; i < 10; i++) {
+      const span = el("span");
+      span.style.left = `${rand(3, 94)}%`;
+      span.style.setProperty("--s", `${rand(14, 30)}px`);
+      span.style.setProperty("--fh", `${rand(7, 13)}s`);
+      span.style.animationDelay = `${rand(-9, 0)}s`;
+      span.appendChild(svgUse("i-heart", "ic ic-fill"));
+      frag3.appendChild(span);
+    }
+    hearts.appendChild(frag3);
   };
 
   const openGift = () => {
@@ -411,7 +430,8 @@
     setTimeout(() => {
       gift.classList.add("is-leaving");
       document.body.classList.remove("is-locked");
-      $("site").hidden = false;
+      const site = $("site");
+      site.hidden = false;
       initReveals();
       window.setTimeout(() => gift.remove(), 900);
     }, 600);
@@ -420,6 +440,7 @@
   applyStaticData();
   showGift();
   initCounter();
+  footerRotator();
 
   $("giftBox").addEventListener("click", openGift);
   $("quizReplay").addEventListener("click", () => {

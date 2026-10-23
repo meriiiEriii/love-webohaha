@@ -152,6 +152,8 @@
       </div>
     </section>
 
+    <div class="whisper reveal"><span id="whisperSlot0"></span></div>
+
     <section class="moonlight" id="moonlight">
       <div class="moon" aria-hidden="true"></div>
       <div class="starfield" id="starfield" aria-hidden="true"></div>
@@ -172,12 +174,15 @@
       </div>
     </section>
 
+    <div class="whisper reveal"><span id="whisperSlot1"></span></div>
+
     <section class="section gallery-section" id="gallery">
       <div class="container">
         <header class="section-head reveal">
           <h2 class="script" id="galTitle"></h2>
           <p id="galSub"></p>
         </header>
+        <div class="whisper whisper-inline reveal"><span id="whisperSlot2"></span></div>
         <ul class="polaroid-grid" id="galleryGrid"></ul>
       </div>
     </section>
@@ -189,9 +194,20 @@
             <svg class="ic"><use href="#i-envelope"/></svg>
             <span>A letter for Bibi</span>
           </figcaption>
-          <p class="letter-body" id="letterBody"></p>
-          <p class="letter-sign script" id="letterSign" aria-hidden="true"></p>
+          <div class="letter-flow" id="letterFlow"></div>
+          <p class="letter-ps" id="letterPs"></p>
+          <p class="letter-sign script" id="letterSign"></p>
         </figure>
+      </div>
+    </section>
+
+    <section class="section chat-section" id="chat">
+      <div class="container">
+        <header class="section-head reveal">
+          <h2 class="script" id="chatTitle"></h2>
+          <p id="chatSub"></p>
+        </header>
+        <ul class="chat-thread" id="chatThread"></ul>
       </div>
     </section>
 
@@ -205,6 +221,8 @@
         <p class="reason-final script" id="reasonFinal" hidden></p>
       </div>
     </section>
+
+    <div class="whisper reveal"><span id="whisperSlot3"></span></div>
 
     <section class="section quiz-section" id="quiz">
       <div class="container">
