@@ -92,7 +92,7 @@
       if (item.src) {
         const img = el("img");
         img.src = item.src;
-        img.alt = item.caption;
+        img.alt = "photo of us";
         img.loading = "lazy";
         frame.appendChild(img);
       } else {
@@ -100,9 +100,7 @@
         art.appendChild(svgUse(motifMap[item.motif] || "i-heart", "ic"));
         frame.appendChild(art);
       }
-      const cap = el("p", "polaroid-cap");
-      cap.textContent = item.caption;
-      li.append(frame, cap);
+      li.append(frame);
       grid.appendChild(li);
     });
 

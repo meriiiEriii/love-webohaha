@@ -419,15 +419,7 @@ button, a { cursor: pointer; font-family: inherit; }
   row-gap: clamp(36px, 5vw, 52px);
 }
 
-.polaroid {
-  background: var(--white);
-  border-radius: 6px;
-  padding: 12px 12px 12px;
-  box-shadow: var(--shadow);
-  transform: translateY(var(--lift, 0px)) rotate(var(--tilt, 0deg));
-  transition: transform 240ms var(--ease), box-shadow 240ms var(--ease);
-  position: relative;
-}
+.polaroid { background: var(--white); border-radius: 6px; padding: 12px; box-shadow: var(--shadow); transform: translateY(var(--lift, 0px)) rotate(var(--tilt, 0deg)); transition: transform 240ms var(--ease), box-shadow 240ms var(--ease); position: relative; }
 
 .polaroid:hover { transform: translateY(calc(var(--lift, 0px) - 8px)) rotate(0deg); box-shadow: 0 24px 52px rgba(46, 86, 121, 0.14); }
 
@@ -476,15 +468,6 @@ button, a { cursor: pointer; font-family: inherit; }
 
 .art-us { background: radial-gradient(circle at 40% 55%, transparent 0 21%, rgba(255, 255, 255, 0.75) 21.5% 23.5%, transparent 24%), radial-gradient(circle at 60% 55%, transparent 0 21%, rgba(255, 255, 255, 0.75) 21.5% 23.5%, transparent 24%), linear-gradient(150deg, #CFE6F6 0%, #A5CDE9 100%); }
 .art-us .ic { color: rgba(78, 127, 168, 0.6); }
-
-.polaroid-cap {
-  font-family: "Dancing Script", cursive;
-  font-weight: 600;
-  color: var(--accent-strong);
-  text-align: center;
-  padding: 10px 4px 2px;
-  font-size: 1.2rem;
-}
 
 .letter-section { background: var(--bg-2); }
 

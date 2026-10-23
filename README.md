@@ -11,16 +11,18 @@ Just double-click `index.html`. It opens in your browser.
 | Names, callsigns, hero text | `gift:` and `hero:` |
 | The live counter start date | `anniversaryISO:` |
 | Timeline moments | `timeline.entries:` |
-| Photo captions | `gallery.items:` |
-| The love letter | `letter.body:` |
+| Photo setup + scatter (tilt/lift) | `gallery.items:` |
+| The love letter | `letter.paragraphs:` |
+| Saved chat bubbles | `chat:` |
+| Footer rotating lines | `footer.lines:` |
 | The 10 reasons | `reasons.items:` |
 | Quiz questions + which option is correct (`answer` counts from 0) | `quiz.questions:` |
 
 ## Add real photos
 1. Drop your photos into the `photos/` folder (simple names like `photo1.jpg`).
 2. In `data.js`, find a `gallery.items` line and set its `src`:
-   `{ caption: "Our first date", art: "art-sky", motif: "heart", src: "photos/photo1.jpg" }`
-3. Refresh the browser — done.
+   `{ art: "art-sky", motif: "heart", src: "photos/photo1.jpg", tilt: 3, lift: 12 }`
+3. Refresh the browser — done. (Photos show with no text on them.)
 
 ## Deployed
 Hosted on GitHub Pages at: https://meriiieri.github.io/love-website/
