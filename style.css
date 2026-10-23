@@ -566,6 +566,8 @@ button, a { cursor: pointer; font-family: inherit; }
   border-bottom-right-radius: 7px;
 }
 
+.bubble-tag { display: block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C29A45; margin-bottom: 4px; }
+
 .bubble.bibi {
   align-self: flex-start;
   background: var(--white);

@@ -89,10 +89,11 @@ const DATA = {
 
   chatMeta: {
     title: "messages I saved for us",
-    subtitle: "mostly 2am stuff. unedited. you know how it is, bam.",
+    subtitle: "it all started with one COR question. what follows is the 2am collection, unedited. you know how it is, bam.",
   },
 
   chat: [
+    { from: "bam", text: "Nakakuha nakag COR?", tag: "my first move" },
     { from: "bam", text: "hey bam. still up?" },
     { from: "bibi", text: "yes?? why are YOU up" },
     { from: "bam", text: "can't sleep. kept thinking about how you looked on the livestream today. even through one blurry Facebook stream, unfair, honestly" },

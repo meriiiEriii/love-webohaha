@@ -124,7 +124,12 @@
     DATA.chat.forEach((msg, i) => {
       const li = el("li", `bubble ${msg.from} reveal`);
       li.style.setProperty("--d", `${i * 70}ms`);
-      li.textContent = msg.text;
+      if (msg.tag) {
+        const tag = el("span", "bubble-tag");
+        tag.textContent = msg.tag;
+        li.appendChild(tag);
+      }
+      li.appendChild(document.createTextNode(msg.text));
       thread.appendChild(li);
     });
 
