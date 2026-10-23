@@ -2,13 +2,13 @@ const DATA = {
   gift: {
     kicker: "For Bibi",
     hint: "From Nash. There's something inside, promise.",
-    action: "tap to open, beh",
+    action: "tap to open, bam",
   },
 
   hero: {
     ribbon: "Happy Birthday, Bibi",
     title: "Everything's for you, Bibi",
-    subtitle: "I built this little universe because I love you. No deeper reason.\nOkay, there's a deeper reason. Long story. Keep scrolling, beh.",
+    subtitle: "I built this little universe because I love you. No deeper reason.\nOkay, there's a deeper reason. Long story. Keep scrolling, bam.",
     cta: "Start our story",
     since: "since May 18, 2025",
     chips: ["Babam forever", "kilig, no charge", "moonlight certified"],
@@ -32,7 +32,7 @@ const DATA = {
   moonlight: {
     chip: "Oct 2024",
     title: "One night. One kiss. Under the moonlight.",
-    body: "Let me go back there for a second. The world went quiet, you were laughing at a joke that did not deserve it, and then somehow I was kissing the prettiest girl under the moon. The wind took every speech I had prepared. I stopped looking for signs after that night. You already were the sign, beh.",
+    body: "Let me go back there for a second. The world went quiet, you were laughing at a joke that did not deserve it, and then somehow I was kissing the prettiest girl under the moon. The wind took every speech I had prepared. I stopped looking for signs after that night. You already were the sign, bam.",
   },
 
   timeline: {
@@ -41,8 +41,8 @@ const DATA = {
     entries: [
       { date: "Oct 2024", title: "Under the moonlight", text: "First kiss. The night stayed quiet, but the whole sky basically approved. Lowkey screamed about it for weeks." },
       { date: "May 18, 2025", title: "The yes", text: "Official. Babam mode: on. Still the easiest yes anyone has ever given me, and I have receipts." },
-      { date: "This October", title: "Champion season", text: "LCUAA National Games. Watched you own that court. Lost my voice at the sideline. Zero regrets, grabe." },
-      { date: "Every day after", title: "To be continued\u2026", text: "No final episode here. We just keep renewing the season, one ordinary day at a time, beh." },
+      { date: "This October", title: "Champion season", text: "Erika's in Pangasinan playing the LCUAA National Games, and every point goes straight through our Facebook live. Screaming at my phone like it's a front-row seat. Zero regrets, grabe." },
+      { date: "Every day after", title: "To be continued\u2026", text: "No final episode here. We just keep renewing the season, one ordinary day at a time, bam." },
     ],
   },
 
@@ -62,7 +62,7 @@ const DATA = {
   letter: {
     paragraphs: [
       "Bibi, right now you're home and this is open on your phone. Which means I finally get to say the whole sappy speech I practiced in the shower, without cracking a smile halfway. Grabe, this is harder than it looks.",
-      "The LCUAA games. Man. I still think about that last hataw: every spike, every save you dug out from the floor. The whole gym felt it. I was up there screaming like I trained with you, and by the end my voice was gone but my heart was so full. You don't just play, beh. You make everyone watching believe they can fly a little too.",
+      "The LCUAA games. Man. I couldn't be inside the gym in Pangasinan, but I swear my seat on the Facebook livestream was the best seat in the whole arena. Every spike, every save you dug out from the floor, my phone got yelled at so hard the neighbors might have heard. By the end my voice was gone but my heart was so full. You don't just play, bam. You make everyone watching believe they can fly a little too.",
       "About your birthday. We didn't get the cake-and-candles version this year, and I know it stung a little. So here's my workaround: a gift that doesn't need a cake in the same room. Truth is, celebrating you already happens on random Tuesdays. This one just comes with confetti.",
       "One year and change of being Babam, and I still catch myself smiling like an idiot at my phone. You make ordinary days feel like my birthday. That's not small. That's actually the whole thing.",
       "So when you're done reading, come here. One kiss. That's the entire request. And tonight, I'm picking up right where we left off in October. Under the moonlight.",
@@ -73,13 +73,13 @@ const DATA = {
 
   chatMeta: {
     title: "messages I saved for us",
-    subtitle: "mostly 2am stuff. unedited. you know how it is, beh.",
+    subtitle: "mostly 2am stuff. unedited. you know how it is, bam.",
   },
 
   chat: [
-    { from: "bam", text: "hey beh. still up?" },
+    { from: "bam", text: "hey bam. still up?" },
     { from: "bibi", text: "yes?? why are YOU up" },
-    { from: "bam", text: "can't sleep. kept thinking about how you looked at the game today. unfair, honestly" },
+    { from: "bam", text: "can't sleep. kept thinking about how you looked on the livestream today. even through one blurry Facebook stream, unfair, honestly" },
     { from: "bibi", text: "hala ka. grabe ka na naman" },
     { from: "bam", text: "sorry, giving myself 5 minutes to be normal about it. charot." },
     { from: "bam", text: "sana all nga may jowang nagse-spike sa buhay. good thing ako 'yon" },
@@ -97,7 +97,7 @@ const DATA = {
       "You make 'how was your day' sound like the best question ever asked.",
       "The way you play. I could watch you fly for hours and forget my own name.",
       "'Babam' stopped being a nickname a long time ago. It's an address now. I live here.",
-      "You turn random Tuesdays into anniversaries. Budget-friendly romance, beh.",
+      "You turn random Tuesdays into anniversaries. Budget-friendly romance, bam.",
       "Jersey on, you're solid iron. Jersey off, you're the softest thing on this planet. The range??",
       "You notice when I go quiet before I even do. Every time.",
       "Distance hasn't won a single round against you. Zero rounds. Sana all sa endurance mo.",
@@ -118,7 +118,7 @@ const DATA = {
       { q: "When is Bibi's birthday?", options: ["Oct 24", "Nov 2", "Oct 28", "Sep 28"], answer: 2 },
     ],
     results: {
-      perfect: "Perfect score. Nobody in this universe knows us better. Achievement unlocked, beh.",
+      perfect: "Perfect score. Nobody in this universe knows us better. Achievement unlocked, bam.",
       good: "Strong. The kilig memory hits different at full speed.",
       low: "Low battery sa memory? It's fine, that's what Bam is for. I remember enough for the both of us.",
     },
@@ -128,7 +128,7 @@ const DATA = {
 
   footer: {
     madeBy: "built by Bam, for his Bibi",
-    againHint: "one more confetti, beh",
+    againHint: "one more confetti, bam",
     lines: [
       "Everywhere is home, as long as it's us.",
       "Sana all may this kind of love. Glad we never have to say it.",
