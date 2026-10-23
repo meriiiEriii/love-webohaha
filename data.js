@@ -49,6 +49,7 @@ const DATA = {
   gallery: {
     title: "Little pieces of us",
     subtitle: "Stand-ins for now. Drop our real photos in the folder and these get framed for real.",
+    shuffle: "shuffle the scatter",
     items: [
       { art: "art-moon", motif: "moon", src: "", tilt: -5, lift: 8 },
       { art: "art-date", motif: "heart", src: "", tilt: 3, lift: 26 },
@@ -56,6 +57,20 @@ const DATA = {
       { art: "art-sky", motif: "cloud", src: "", tilt: 6, lift: 18 },
       { art: "art-wave", motif: "wave", src: "", tilt: -4, lift: 12 },
       { art: "art-us", motif: "sparkle", src: "", tilt: 2, lift: 30 },
+      { art: "art-moon", motif: "moon", src: "", tilt: 4, lift: 4 },
+      { art: "art-date", motif: "heart", src: "", tilt: -6, lift: 22 },
+      { art: "art-ball", motif: "ball", src: "", tilt: 1, lift: 14 },
+      { art: "art-sky", motif: "cloud", src: "", tilt: -3, lift: 28 },
+      { art: "art-wave", motif: "wave", src: "", tilt: 5, lift: 6 },
+      { art: "art-us", motif: "sparkle", src: "", tilt: -1, lift: 20 },
+      { art: "art-moon", motif: "moon", src: "", tilt: -5, lift: 24 },
+      { art: "art-date", motif: "heart", src: "", tilt: 3, lift: 10 },
+      { art: "art-ball", motif: "ball", src: "", tilt: 7, lift: 0 },
+      { art: "art-sky", motif: "cloud", src: "", tilt: -2, lift: 16 },
+      { art: "art-wave", motif: "wave", src: "", tilt: 2, lift: 32 },
+      { art: "art-us", motif: "sparkle", src: "", tilt: -6, lift: 2 },
+      { art: "art-moon", motif: "moon", src: "", tilt: 4, lift: 20 },
+      { art: "art-date", motif: "heart", src: "", tilt: -3, lift: 12 },
     ],
   },
 

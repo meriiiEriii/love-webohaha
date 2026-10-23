@@ -81,6 +81,7 @@
 
     fillText("galTitle", DATA.gallery.title);
     fillText("galSub", DATA.gallery.subtitle);
+    fillText("shuffleText", DATA.gallery.shuffle);
     const motifMap = { moon: "i-moon", heart: "i-heart", ball: "i-ball", cloud: "i-cloud", wave: "i-wave", sparkle: "i-sparkle" };
     const grid = $("galleryGrid");
     DATA.gallery.items.forEach((item, i) => {
@@ -452,6 +453,13 @@
   $("againBtn").addEventListener("click", () => {
     const c = centerOf($("againBtn"));
     burst(Math.min(window.innerWidth - 20, Math.max(20, c.x)), Math.max(40, c.y - 40), 90);
+  });
+  $("shuffleBtn").addEventListener("click", () => {
+    const cards = $("galleryGrid").querySelectorAll(".polaroid");
+    cards.forEach((card) => {
+      card.style.setProperty("--tilt", `${rand(-6, 6).toFixed(1)}deg`);
+      card.style.setProperty("--lift", `${rand(0, 34).toFixed(0)}px`);
+    });
   });
 
   renderQuiz();
